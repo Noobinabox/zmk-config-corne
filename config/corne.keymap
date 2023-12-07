@@ -28,6 +28,17 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        alt_tab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <38 13>;
+            layers = <0>;
+            timeout-ms = <500>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
