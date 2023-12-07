@@ -39,10 +39,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q             &kp W  &kp E  &kp R       &kp T         &kp Y      &kp U      &kp I      &kp O    &kp P                 &none
-&none  &kp A             &kp S  &kp D  &kp F       &kp G         &kp H      &kp J      &kp K      &kp L    &kp SEMI              &none
-&none  &hm LEFT_SHIFT Z  &kp X  &kp C  &kp V       &kp B         &kp N      &kp M      &kp COMMA  &kp DOT  &hm LEFT_SHIFT SLASH  &none
-                                &mo 1  &kp LSHIFT  &kp RETURN    &kp SPACE  &kp LCTRL  &mo 2
+&none  &kp Q               &kp W  &kp E  &kp R       &kp T         &kp Y      &kp U      &kp I      &kp O    &kp P                 &none
+&none  &hm LEFT_CONTROL A  &kp S  &kp D  &kp F       &kp G         &kp H      &kp J      &kp K      &kp L    &kp SEMI              &none
+&none  &hm LEFT_SHIFT Z    &kp X  &kp C  &kp V       &kp B         &kp N      &kp M      &kp COMMA  &kp DOT  &hm LEFT_SHIFT SLASH  &none
+                                  &sl 1  &kp LSHIFT  &kp RETURN    &kp SPACE  &kp LCTRL  &sl 2
             >;
         };
 
@@ -57,7 +57,7 @@
 &none  &kp N1  &kp N2        &kp N3        &kp N4        &kp N5          &kp N6     &kp N7    &kp N8  &kp N9     &kp N0         &none
 &none  &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &kp BACKSPACE  &none
 &none  &trans  &trans        &trans        &trans        &trans          &trans     &trans    &trans  &trans     &trans         &none
-                             &trans        &trans        &kp RETURN      &kp SPACE  &trans    &trans
+                             &sl 0         &trans        &kp RETURN      &kp SPACE  &trans    &trans
             >;
         };
 
@@ -72,7 +72,7 @@
 &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
 &none  &kp ESC   &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &none
 &none  &kp TAB   &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
-                         &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+                         &kp LGUI  &trans    &kp SPACE    &kp SPACE  &trans     &kp RALT
             >;
         };
 
