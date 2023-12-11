@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -37,6 +36,26 @@
             layers = <0>;
             timeout-ms = <500>;
         };
+
+        toggle_default_layer {
+            bindings = <&to 0>;
+            key-positions = <37 13>;
+        };
+
+        toggle_lower_layer {
+            bindings = <&to 1>;
+            key-positions = <14 37>;
+        };
+
+        toggle_raised_layer {
+            bindings = <&to 2>;
+            key-positions = <15 37>;
+        };
+
+        toggle_tri_layer {
+            bindings = <&to 3>;
+            key-positions = <16 37>;
+        };
     };
 
     keymap {
@@ -50,10 +69,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E  &kp R       &kp T         &kp Y      &kp U      &kp I      &kp O    &kp P      &none
-&none  &kp A  &kp S  &kp D  &kp F       &kp G         &kp H      &kp J      &kp K      &kp L    &kp SEMI   &none
-&none  &kp Z  &kp X  &kp C  &kp V       &kp B         &kp N      &kp M      &kp COMMA  &kp DOT  &kp SLASH  &none
-                     &sl 1  &kp LSHIFT  &kp RETURN    &kp SPACE  &kp LCTRL  &sl 2
+&none  &kp Q  &kp W  &kp E  &kp R       &kp T         &kp Y      &kp U      &kp I         &kp O    &kp P      &none
+&none  &kp A  &kp S  &kp D  &kp F       &kp G         &kp H      &kp J      &kp K         &kp L    &kp SEMI   &none
+&none  &kp Z  &kp X  &kp C  &kp V       &kp B         &kp N      &kp M      &kp COMMA     &kp DOT  &kp SLASH  &none
+                     &sl 1  &kp LSHIFT  &kp RETURN    &kp SPACE  &kp LCTRL  &kp LEFT_ALT
             >;
         };
 
@@ -65,10 +84,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp N1  &kp N2        &kp N3        &kp N4        &kp N5          &kp N6     &kp N7    &kp N8  &kp N9     &kp N0         &none
-&none  &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &kp BACKSPACE  &none
-&none  &trans  &trans        &trans        &trans        &trans          &trans     &trans    &trans  &trans     &trans         &none
-                             &sl 0         &trans        &kp RETURN      &kp SPACE  &trans    &trans
+&none  &kp N1  &kp N2  &kp N3          &none   &none         &none      &none     &none   &none      &none          &none
+&none  &kp N4  &kp N5  &kp N6          &none   &none         &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &kp BACKSPACE  &none
+&none  &kp N7  &kp N8  &kp N9          &kp N0  &trans        &trans     &trans    &trans  &trans     &trans         &none
+                       &kp LEFT_SHIFT  &trans  &kp RETURN    &kp SPACE  &trans    &trans
             >;
         };
 
@@ -80,18 +99,18 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
-&none  &kp ESC   &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &none
-&none  &kp TAB   &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
-                         &sl 1     &trans    &kp ENTER    &kp SPACE  &trans     &sl 0
+&none  &kp EXCL  &kp AT            &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
+&none  &kp ESC   &kp SINGLE_QUOTE  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &none
+&none  &kp TAB   &trans            &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
+                                   &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
 
         tri_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1  &kp F2  &kp F3  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F4  &kp F5  &kp F6  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F7  &kp F8  &kp F9  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
@@ -99,10 +118,5 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        bottom_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
     };
 };
