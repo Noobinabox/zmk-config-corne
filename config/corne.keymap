@@ -39,22 +39,22 @@
 
         toggle_default_layer {
             bindings = <&to 0>;
-            key-positions = <37 13>;
+            key-positions = <13 36>;
         };
 
         toggle_lower_layer {
             bindings = <&to 1>;
-            key-positions = <14 37>;
+            key-positions = <14 36>;
         };
 
         toggle_raised_layer {
             bindings = <&to 2>;
-            key-positions = <15 37>;
+            key-positions = <15 36>;
         };
 
         toggle_tri_layer {
             bindings = <&to 3>;
-            key-positions = <16 37>;
+            key-positions = <16 36>;
         };
     };
 
@@ -69,10 +69,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E  &kp R       &kp T         &kp Y      &kp U      &kp I         &kp O    &kp P      &none
-&none  &kp A  &kp S  &kp D  &kp F       &kp G         &kp H      &kp J      &kp K         &kp L    &kp SEMI   &none
-&none  &kp Z  &kp X  &kp C  &kp V       &kp B         &kp N      &kp M      &kp COMMA     &kp DOT  &kp SLASH  &none
-                     &sl 1  &kp LSHIFT  &kp RETURN    &kp SPACE  &kp LCTRL  &kp LEFT_ALT
+&none  &kp Q  &kp W  &kp E   &kp R       &kp T         &kp Y      &kp U      &kp I         &kp O    &kp P      &none
+&none  &kp A  &kp S  &kp D   &kp F       &kp G         &kp H      &kp J      &kp K         &kp L    &kp SEMI   &none
+&none  &kp Z  &kp X  &kp C   &kp V       &kp B         &kp N      &kp M      &kp COMMA     &kp DOT  &kp SLASH  &none
+                     &tog 1  &kp LSHIFT  &kp RETURN    &kp SPACE  &kp LCTRL  &kp LEFT_ALT
             >;
         };
 
