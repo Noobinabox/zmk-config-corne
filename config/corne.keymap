@@ -82,7 +82,7 @@
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <36 22>;
+            key-positions = <36 21>;
             layers = <0 1 3 2 4>;
             timeout-ms = <1000>;
         };
