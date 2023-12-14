@@ -10,13 +10,6 @@
 
 / {
     behaviors {
-        tap_shift_caps: tap_shift_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_SHIFT_CAPS";
-            #binding-cells = <0>;
-            bindings = <&kp LS(CAPS)>;
-        };
-
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mods";
