@@ -86,6 +86,15 @@
         };
     };
 
+    macros {
+        escape_to_layer_zero: escape_to_layer_zero {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &to 0>;
+            label = "ESCAPE_TO_LAYER_ZERO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -127,10 +136,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL    &kp AT   &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET       &kp AMPERSAND  &kp STAR          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
-&none  &kp ESCAPE  &kp TAB  &none     &none       &none          &kp MINUS       &none          &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp EQUAL              &none
-&none  &none       &none    &none     &none       &none          &kp UNDERSCORE  &none          &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &none
-                            &trans    &trans      &trans         &trans          &trans         &trans
+&none  &kp EXCL               &kp AT   &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET       &kp AMPERSAND  &kp STAR          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
+&none  &escape_to_layer_zero  &kp TAB  &none     &none       &none          &kp MINUS       &none          &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp EQUAL              &none
+&none  &none                  &none    &none     &none       &none          &kp UNDERSCORE  &none          &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &none
+                                       &trans    &trans      &trans         &trans          &trans         &trans
             >;
         };
 
