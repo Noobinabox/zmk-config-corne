@@ -93,6 +93,20 @@
             bindings = <&kp ESCAPE &to 0>;
             label = "ESCAPE_TO_LAYER_ZERO";
         };
+
+        jetbrains_format_code: jetbrains_format_code {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(L))>;
+            label = "JETBRAINS_FORMAT_CODE";
+        };
+
+        jetbrains_import_library: jetbrains_import_library {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(ENTER)>;
+            label = "JETBRAINS_IMPORT_LIBRARY";
+        };
     };
 
     keymap {
@@ -145,10 +159,10 @@
 
         tri_layer {
             bindings = <
-&none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none         &none   &none   &none   &none    &none    &none
-&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6  &kp F7  &kp F8  &kp F9   &kp F10  &none
-&none  &none         &none         &none         &none         &bt BT_CLR    &none   &none   &none   &kp F11  &kp F12  &none
-                                   &trans        &trans        &trans        &trans  &trans  &trans
+&none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3               &bt BT_SEL 4            &none         &none   &none   &none   &none    &none    &none
+&none  &kp F1        &kp F2        &kp F3                     &kp F4                  &kp F5        &kp F6  &kp F7  &kp F8  &kp F9   &kp F10  &none
+&none  &none         &none         &jetbrains_import_library  &jetbrains_format_code  &bt BT_CLR    &none   &none   &none   &kp F11  &kp F12  &none
+                                   &trans                     &trans                  &trans        &trans  &trans  &trans
             >;
         };
 
