@@ -49,14 +49,11 @@
             release-after-ms = <1000>;
         };
 
-        tap_hold_kp: tap_hold_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TAP_HOLD_KP";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <150>;
+        tap_tab_gui: tap_tab_gui {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_TAB_GUI";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&sticky_key LEFT_GUI>;
         };
     };
 
@@ -140,10 +137,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E                 &kp R              &kp T         &kp Y      &kp U      &kp I                      &kp O    &kp P                  &none
-&none  &kp A  &kp S  &kp D                 &kp F              &kp G         &kp H      &kp J      &kp K                      &kp L    &tap_single_semicolon  &none
-&none  &kp Z  &kp X  &kp C                 &kp V              &kp B         &kp N      &kp M      &kp COMMA                  &kp DOT  &kp SLASH              &none
-                     &tap_hold_layers 1 0  &sticky_key LSHFT  &kp RETURN    &kp SPACE  &kp LCTRL  &tap_hold_kp LEFT_WIN TAB
+&none  &kp Q  &kp W  &kp E                 &kp R              &kp T         &kp Y      &kp U      &kp I         &kp O    &kp P                  &none
+&none  &kp A  &kp S  &kp D                 &kp F              &kp G         &kp H      &kp J      &kp K         &kp L    &tap_single_semicolon  &none
+&none  &kp Z  &kp X  &kp C                 &kp V              &kp B         &kp N      &kp M      &kp COMMA     &kp DOT  &kp SLASH              &none
+                     &tap_hold_layers 1 0  &sticky_key LSHFT  &kp RETURN    &kp SPACE  &kp LCTRL  &tap_tab_gui
             >;
         };
 
